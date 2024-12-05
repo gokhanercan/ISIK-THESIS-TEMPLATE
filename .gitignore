@@ -1,0 +1,17 @@
+*.toc
+Thesis.synctex.gz
+Thesis.pdf
+*.out
+*.lot
+*.log
+*.lof
+*.aux
+*.log
+Thesis.synctex.gz
+Thesis.toc
+Thesis.synctex.gz
+Thesis.blg
+Thesis.synctex(busy)
+*.gz
+/Thesis.bbl
+/Thesis.blg

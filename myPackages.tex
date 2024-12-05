@@ -1,0 +1,29 @@
+% Türkçe karakter için: https://www.overleaf.com/9545523bkkgxbpwxpgq#/34630773/
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+
+\usepackage{tabularx}
+
+%For TODO Management (ex: https://tex.stackexchange.com/questions/9796/how-to-add-todo-notes)
+\usepackage{xargs}% Use more than one optional parameter in a new commands
+
+% --------------- TABLES ---------------------------
+\usepackage{array}
+\newcolumntype{K}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+% https://tex.stackexchange.com/questions/127050/vertically-align-text-in-table-in-latex
+\usepackage{float}		%https://tex.stackexchange.com/questions/20376/how-to-bind-figure-table-to-a-section
+
+% subfig paketini bir türlü çalıştıramadım, vazgeçtim.
+% \usepackage{graphicx}  % include images
+% \usepackage[caption=false]{subfig} % subfigures.  false option prevents conflicts in caption styling with other packages
+
+\usepackage{textcomp} %sağa ok yapmak için
+
+
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+ 
+% \newcommand{\N}{\mathbb{N}}
+% \newcommand{\Z}{\mathbb{Z}}
+
+\usepackage{harpoon}	%https://tex.stackexchange.com/questions/344778/latex-vector-notation-arrow

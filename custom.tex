@@ -1,0 +1,85 @@
+\usepackage[utf8]{inputenc}
+
+%mailto için
+\usepackage{hyperref} 
+
+%todonotes performans sebebiyle remove edildi. 6'dan 3sn'ye düştü. 
+%https://tex.stackexchange.com/questions/8791/speeding-up-latex-compilation
+
+%For Matrix Images (imported from https://www.overleaf.com/project/63d5677f38388e1fb22f2853)
+\usepackage{graphicx}
+%\usepackage[export]{adjustbox}
+\PassOptionsToPackage{export}{adjustbox}  %this is the fix.
+
+
+%TIKS
+\usepackage{tikz}                    % in preamble. todolist lib yoksa bu gerekli. 
+%\usepgflibrary{patterns} % LATEX and plain TEX and pure pgf
+%\usepgflibrary[patterns] % ConTEXt and pure pgf
+\usetikzlibrary{patterns} % LATEX and plain TEX when using Tik Z
+\usetikzlibrary[patterns] % ConTEXt when using Tik Z
+
+\usepackage{amsmath} %Sim-Rel space denklemi için.
+\usepackage{lscape}   %landspace page yapabilmek için.
+\usepackage{adjustbox}  %tablo oto genişlesin ???
+
+\newcommand{\cout}[1]{\ignorespaces} %cout: commenting out a word ref: https://tex.stackexchange.com/questions/276697/commenting-out-a-few-words-within-a-paragraph
+
+%FOOTNOTE
+%Bu hata verdi COLI'de!
+%\usepackage{scrextend}  
+%aynı footnote'a birden fazla ref verebilmek için. https://tex.stackexchange.com/questions/35043/reference-different-places-to-the-same-footnote
+
+%-----MULTILINE TABLE-------
+\usepackage{pbox}
+% Tablo hücresi içinde alt satır için: https://tex.stackexchange.com/questions/2441/how-to-add-a-forced-line-break-inside-a-table-cell
+
+\usepackage{booktabs, multirow} % for borders and merged ranges
+
+%HIDING COLUMNS: https://texblog.org/2014/10/24/removinghiding-a-column-in-a-latex-table/
+\usepackage{array}
+\newcolumntype{H}{>{\setbox0=\hbox\bgroup}c<{\egroup}@{}}
+
+
+%Cancel-out / Strikethrough için https://tex.stackexchange.com/questions/23711/strikethrough-text
+\usepackage{cancel}
+
+\usepackage{xfp}
+
+%Birden fazla equation verebilmek için
+%ref:https://ftp.cc.uoc.gr/mirrors/CTAN/macros/latex/contrib/cleveref/cleveref.pdf
+%\usepackage{cleveref}	%Kullanmıyorum
+
+%\usepackage{graphicx}
+%\usepackage[export]{adjustbox}
+%\PassOptionsToPackage{export}{adjustbox}
+
+\definecolor{myblue}{rgb}{0.26,0.52,0.96}
+\definecolor{myred}{rgb}{1,0,0}
+\definecolor{myyel}{rgb}{0.96,0.7,0}
+\definecolor{mygreen}{rgb}{0.458,0.768,0.49}
+
+%for numberless footnote
+\newcommand\blfootnote[1]{%
+	\begingroup
+	\renewcommand\thefootnote{}\footnote{#1}%
+	\addtocounter{footnote}{-1}%
+	\endgroup
+}
+
+%Verbatim block'ları resize edebilmek formatlayabilmek için
+\usepackage{adjustbox}
+\usepackage{varwidth}
+
+\usepackage[none]{hyphenat}
+
+\usepackage{chngcntr}
+
+\usepackage{pdflscape}	%yatay sayfa için
+
+\newcommand{\lt}{\textless}		%sn template'inde < > bunlar çalışmadı.
+\newcommand{\gt}{\textgreater}
+
+%\usepackage{natbib}
+
+

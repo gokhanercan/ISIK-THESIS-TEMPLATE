@@ -1,0 +1,227 @@
+%% ----------------------------------------------------------------
+%% Thesis.tex -- MAIN FILE (the one that you compile with LaTeX)
+%% ----------------------------------------------------------------
+
+% Set up the document
+\documentclass[a4paper, 12pt, oneside]{Thesis}  % Use the "Thesis" style, based on the ECS Thesis style by Steve Gunn
+
+% This is the preamble where you add packages and custom settings.
+\usepackage{mathptmx}  % Times New Roman font for pdflatex - Bu Times New Roman'ı scaleable yapıyorumuş.
+
+
+%\usepackage{fontspec}
+%\setmainfont{Times New Roman}
+
+\usepackage{lmodern}  % Load scalable fonts
+\usepackage[T1]{fontenc}  % Improve font encoding
+\usepackage[english]{babel}         % Language setup
+%\usepackage[expansion=false]{microtype}  % Disable font expansion
+\usepackage{microtype}              % Improves text justification
+
+%Spacing
+\usepackage{setspace}  % For line spacing
+\onehalfspacing        % Set 1.5 line spacing
+
+%\usepackage{comment} % To disable parts of the document
+%\specialcomment{excludechapter}{}{}
+
+\graphicspath{{figures/}}  % Location of the graphics files (set up for graphics to be in PDF format)
+
+% Bu paketler üniversitenin eski style'ından geliyorlar. Ne yaptıklarını bilmiyorum.
+\usepackage{verbatim}
+% \usepackage{vector}  
+\usepackage{notoccite}
+\usepackage{ifthen}
+
+\usepackage[authoryear,round,semicolon]{natbib}		%sort ve square istemiyorum.
+%\usepackage[numbers]{natbib}
+%\usepackage{cite}
+
+\input{myPackages.tex}
+\input{myVariables.tex}
+\input{custom.tex}
+
+\hypersetup{urlcolor=blue, colorlinks=true}  
+
+\usepackage{multirow}
+\usepackage{sectsty}
+\usepackage{multirow}
+\usepackage{marginnote}
+\usepackage{framed}
+
+%% ----------------------------------------------------------------
+\renewcommand\contentsname{\large{TABLE OF CONTENTS}}
+\renewcommand\listfigurename{\large{LIST OF FIGURES}}
+\renewcommand\listtablename{\large {LIST OF TABLES}}
+\renewcommand\bibname{REFERENCES}
+
+\chapterfont{\large\centering\bfseries}
+\chaptertitlefont{\large\centering\bfseries}
+\sectionfont{\normalsize\bfseries}
+\subsectionfont{\normalsize\bfseries}
+\subsubsectionfont{\normalsize\bfseries}
+
+\hypersetup{pdfborder={0 0 0}, colorlinks=false}  % Black hyperlinks.
+
+\renewcommand{\figurename}{\normalsize Figure}
+% Different font in captions
+\newcommand{\captionfonts}{\normalsize}
+\makeatletter  % Allow the use of @ in command names
+\long\def\@makecaption#1#2{%
+  \vskip\abovecaptionskip
+  \sbox\@tempboxa{{\captionfonts #1: #2}}%
+  \ifdim \wd\@tempboxa >\hsize
+    {\captionfonts #1: #2\par}
+  \else
+    \hbox to\hsize{\hfil\box\@tempboxa\hfil}%
+  \fi
+  \vskip\belowcaptionskip}
+\makeatother   % Cancel the effect of \makeatletter
+
+
+
+
+%BU HACK'İ YENİ TEZ FORMATI İÇİN YAPIYORUZ
+\usepackage{titlesec} % Load titlesec to help format titles
+\renewcommand{\chaptername}{Chapter} % Define the chapter prefix
+\usepackage{titlesec}
+\titleformat{\chapter}[display]
+{\normalfont\large\bfseries\centering} % Formatting the chapter, including centering
+{CHAPTER \thechapter} % Adding "Chapter" followed by the number
+{20pt} % Space between number and title
+{\large} % Style for the chapter title (this will also be centered)
+
+\usepackage{booktabs}	%Custom toprule formatı verilebiliyor. 
+\usepackage{caption}
+
+\sloppy                              % Relaxes line breaking rules
+%\setlength{emergencystretch}{1em}    % Adds extra flexibility to line spacing  olmuyor. 
+
+
+\begin{document}
+
+\captionsetup{skip=10pt,labelfont=bf,justification=raggedright,singlelinecheck=false} % Adjust the space as needed
+
+\input{outTitlePage2}
+\clearpage
+\input{titlePage2}
+\frontmatter     
+\input{approvalPage2}
+\clearpage
+
+\addtotoc{ABSTRACT}
+\abstract{ 
+
+% Abstract-P1
+\noindent abstract1
+% Abstract-P2
+\noindent abstract2
+
+% Abstract-P3
+abstract3
+
+\noindent \textbf {\small{Keywords: }}
+%% ---TÜRKÇE ÖZET-------------------------------------------------------------
+
+\clearpage 
+\addtotoc{ÖZET}
+\ozet { 
+\noindent tr özet
+\noindent \textbf {\small{Anahtar kelimeler: }}
+
+
+
+%% ----------------------------------------------------------------
+% Acknowledgements page
+%\acknowledgements{
+% \addtocontents{toc}{\vspace{1em}}  
+% \noindent This study was supported by The Scientific and
+% Technological Research Council of Turkey (T\"{U}B\.{I}TAK) Grant No: 
+% }
+\clearpage  
+
+%% ----------------------------------------------------------------
+
+% Dedicated to
+% \pagestyle{empty}  
+% \dedicatory{To\ldots}
+
+%% ----------------------------------------------------------------
+
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+\tableofcontents  % Write out the Table of Contents
+
+
+%% ----------------------------------------------------------------
+
+\listoftables  % Write out the List of Tables
+
+%% ----------------------------------------------------------------
+
+\listoffigures  % Write out the List of Figures
+
+%% ----------------------------------------------------------------
+\setstretch{1.5}  
+\clearpage  % Start a new page
+\listofsymbols{ll}  % Include a list of Abbreviations (a table of two columns)
+{
+	\textbf{SYM} & symbol1 \\
+}
+
+
+
+%% ---------------CHAPTER 1-------------------------------------------------
+\mainmatter   
+\pagestyle{plain}
+\chapter{INTRODUCTION}
+\label{ch:introduction}
+intro text
+
+\section{SECTION}
+section text
+
+Sample cite:   \cite{mikolov2013distributed}.
+Sample cite p: \citep{mikolov2013efficient}.
+Sample cite  t:   \citet{mikolov2013efficient}
+
+\subsection{Subsection}
+Subsection text
+
+\subsubsection{SubSubsection}
+Subsubsection text
+
+\paragraph{Paragraph1}
+p text
+\paragraph{Paragraph2}
+p text
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%--------------------ENDINGS PARTS-------------------------------------------
+\chapter*{APPENDICES}
+\addtotoc{APPENDICES}
+\input{pages/appendix.tex}
+
+\clearpage 
+\renewcommand\bibname{REFERENCES}
+\addtotoc{REFERENCES}
+\bibliographystyle{abbrvnat_custom}		%Thesis.(aux,blg,bbl) dosyalarını silmek gerekiyor önce. Taktı mı derlemiyor bi türlü. cache'leri silip pdflatex ve bibtex run et.
+%\bibliographystyle{IEEE}
+\bibliography{myBibliography.bib}
+
+\end{document}
