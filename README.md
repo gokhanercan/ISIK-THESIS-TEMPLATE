@@ -1,0 +1,1 @@
+⚠️ This repository is based on the official LaTeX template formerly used by the university’s Graduate School of Science and Engineering. However, the renamed Işık University School of Graduate Studies no longer accepts LaTeX-based submissions in any form; therefore, the official MS Word document format is now recommended.
